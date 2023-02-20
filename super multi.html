@@ -1,0 +1,222 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="">
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+font-family:sans-serif;
+}
+body {
+  background-color:darkgrey;
+  background-position:center;
+  background-size:cover;
+  
+}
+.container{
+width:300px;
+top:5%;
+height:370px;
+margin:8% auto;
+background:#203;
+box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 4px 6px rgba(0,0,0,0.4);
+position:relative;
+border-radius:15px;
+overflow:hidden;
+}
+h3{
+text-align:center;
+margin-buttom:40px;
+font-size:25px;
+color:#fff;
+}
+.container form{
+width:100%;
+position:absolute;
+top:100px;
+left:10px;
+transition:0.5s;
+}
+form span{
+color:#ffad06;
+font-size:25px;
+}
+form input{
+width:280px;
+padding:10px 5px;
+margin:5px 0;
+border:1;
+border-top:none;
+border-right:none;
+border-left:none;
+outline:none;
+background:transparent;
+}
+::placeholder{
+color:#fff;
+font-size:0.9rem;
+}
+.btn-box{
+width:100%;
+margin:30px auto;
+text-align:center;
+}
+button:hover{
+background: linear-gradient(to right,#ffad06, #f3f3f3);
+}
+button{
+width:110px;
+height:35px;
+margin:0 10px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.4), 0 2px 3px rgba(0,0,0,0.4);
+background: linear-gradient(to right, #ff1057, #ffad06);
+border-radius:30px;
+border:0;
+font-size:1rem;
+margin-top:20px;
+outline:none;
+color:#fff;
+cursor:pointer;
+}
+#form2{left:450px;}
+#form3{left:450px;}
+#form4{left:450px;}
+.step-row{
+width:340px;
+height:40px;
+margin:0 auto;
+display:flex;
+align-items:center;
+box-shadow: 0 -1px 5px -1 #000;
+position:relative;
+}
+.step-col small {
+width:120px;
+margin-left:37px;
+text-align:center;
+color:#ddd;
+position:relative;
+}
+#progress{
+position:absolute;
+width:78px;
+display:inline-block;
+height:100%;
+border-radius:5px  5px 0 0;
+transition:0.8s;
+background: linear-gradient(to right, #ff1057, #ffad06);
+}
+#progress::after{
+content:"";
+height:0;
+width:0;
+border-top:20p solid transparent;
+border-buttom:20px solid transparent;
+position:absolute;
+right:20px;
+top:0;
+border-left:20px solid #ffad06;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="step-row">
+<div id="progress" class="progress"></div>
+<div class="step-col"><small>step1</small></div>
+<div class="step-col"><small>step2</small></div>
+<div class="step-col"><small>step3</small></div>
+<div class="step-col"><small>step4</small></div>
+</div>
+<hr>
+<hr>
+<form id="form1">
+<h3>CREATE<span> ACCOUNT</span></h3>
+<input type="Email" placeholder="Email" name="Email">
+<input type="password" placeholder="Password" name="Password" id="Password">
+<input type="password" placeholder="confirm password" name="C-password" id="C-password">
+<div claas="btn-box">
+<button type="button" id="Next1">Next</button>
+</div>
+</form>
+<form id="form2">
+<h3><span>SOCIAL</span> LINKS</h3>
+<input type="Number" placeholder="whatsApp" name="whatsApp">
+<input type="password" placeholder="Facebook" name="facebook">
+<input type="password" placeholder="Youtube" name="Youtube">
+<div claas="btn-box">
+<button type="button" id="Back1">Back</button>
+<button type="button" id="Next2">Next</button>
+</div>
+</form>
+<form id="form3">
+<h3>PERSONAL<span> INFO</span></h3>
+<input type="text" placeholder="First name" name="Fname">
+<input type="text" placeholder="Last name" name="Lname">
+<input type="number" placeholder="Mobile no." name="mobile no">
+<div claas="btn-box">
+<button type="button" id="Back2">Back</button>
+<button type="button" id="Next3">Next</button>
+</div>
+</form>
+<form id="form4">
+<h3><span>LOG</span>IN</h3>
+<input type="number" placeholder="mobile no." name="phone">
+<input type="password" placeholder="password" name="lpass">
+<div claas="btn-box">
+<button type="button" id="Back3">Back</button>
+<button type="submit">submit</button>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+var form1 = document.getElementById("form1");
+var form2 = document.getElementById("form2");
+var form3 = document.getElementById("form3");
+var form4 = document.getElementById("form4");
+
+var Next1 = document.getElementById("Next1");
+var Next2 = document.getElementById("Next2");
+var Next3 = document.getElementById("Next3");
+var Back1 = document.getElementById("Back1");
+var Back2 = document.getElementById("Back2");
+var back3 = document.getElementById("Back3");
+var progress = document.getElementById("progress");
+
+Next1.onclick = function(){
+   form1.style.left="-450px";
+   form2.style.left="10px";
+   progress.style.width="150px";
+}
+Back1.onclick = function(){
+   form1.style.left="10px";
+   form2.style.left="450px";
+   progress.style.width="85px";
+}
+Next2.onclick = function(){
+   form2.style.left="-450px";
+   form3.style.left="10px";
+   progress.style.width="210px";
+}
+Back2.onclick = function(){
+   form2.style.left="10px";
+   form3.style.left="450px";
+   progress.style.width="150px";
+}
+Next3.onclick = function(){
+   form3.style.left="-450px";
+   form4.style.left="10px"
+   progress.style.width="300px";
+}
+Back3.onclick = function(){
+   form3.style.left="10px";
+   form4.style.left="450px";
+   progress.style.width="210px";
+}
+
+
+</script>
+</body>
+</html>
